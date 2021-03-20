@@ -17,8 +17,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     apply from: 'versions.gradle'
-    addRepos(repositories)
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        jcenter()
+    }
     dependencies {
+        classpath deps.logging_live_data
         classpath deps.android_gradle_plugin
         classpath deps.kotlin.plugin
         classpath deps.kotlin.allopen
@@ -29,7 +35,12 @@ buildscript {
 }
 
 allprojects {
-    addRepos(repositories)
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        jcenter()
+    }
 }
 
 
